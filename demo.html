@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./demo.css">
+</head>
+<body>
+	<div class="banner-wrap">
+		<ul class="banner">
+			<li><img src="./img/1.jpg"></li>
+			<li><img src="./img/2.jpg"></li>
+			<li><img src="./img/3.jpg"></li>
+			<li><img src="./img/4.jpg"></li>
+		</ul>
+		<div class="btn">
+			<span class="active box"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	/*
+	1.点击圆球变颜色  其他去除
+	2.点击圆球切换图片
+	*/
+	/*
+	for循环
+		1.定义函数
+		2.判断语句
+		3.循环体
+		4.变换语句
+	*/
+	var ospan = document.querySelectorAll('span'),
+	    oban = document.querySelector('.banner'),
+	     length = ospan.length;//获取所有span标签
+
+	     // 	1.点击圆球变颜色  其他去除
+	// 定义语句 判断语句 变换语句
+	for(var i = 0;i<length;i++){
+		 ospan[i].demo = i;
+
+		ospan[i].onclick = function(){//点击上色
+
+			for(var index = 0;index<length;index++){//点击去除上一个球颜色
+			ospan[index].classList.remove('active');
+		}
+
+		  this.classList.add('active');//点击谁触发谁  
+		  oban.style.left = this.demo * (-100) + '%'; 
+		}
+	}
+
+	</script>
+</body>
+</html>
